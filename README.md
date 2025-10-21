@@ -15,7 +15,7 @@
 ## 📊 Project Overview
 
 This project implements a complete trading strategy API with:
-- **1215 real HINDALCO records** (2014-2018 daily data)
+- **1216 real HINDALCO records** (2014-2018 daily data)
 - **Moving Average Crossover Strategy** (10-day/30-day)
 - **FastAPI RESTful endpoints** with automatic documentation
 - **SQLite database** with Prisma schema
@@ -230,3 +230,13 @@ env :
 
 DATABASE_URL=sqlite:///trading_final.db
 
+<<<<<<< HEAD
+=======
+
+👨‍💻 Author
+Your Ashutosh Pandey
+
+GitHub: @ashutoshpandey18
+
+Email: ashutoshpandey23june2005@gmail.com
+>>>>>>> e869f3bdbe3a5c5a3d7900dece19b60ff2759def
