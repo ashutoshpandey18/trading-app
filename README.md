@@ -15,7 +15,7 @@
 ## 📊 Project Overview
 
 This project implements a complete trading strategy API with:
-- **1215 real HINDALCO records** (2014-2018 daily data)
+- **1216 real HINDALCO records** (2014-2018 daily data)
 - **Moving Average Crossover Strategy** (10-day/30-day)
 - **FastAPI RESTful endpoints** with automatic documentation
 - **SQLite database** with Prisma schema
