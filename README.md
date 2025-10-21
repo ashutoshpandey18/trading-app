@@ -5,7 +5,7 @@
 ![Python](https://img.shields.io/badge/python-3.8%2B-blue)
 ![FastAPI](https://img.shields.io/badge/FastAPI-0.68%2B-green)
 ![Docker](https://img.shields.io/badge/docker-ready-blue)
-![Tests](https://img.shields.io/badge/tests-9/9%20passing-brightgreen)
+![Tests](https://img.shields.io/badge/tests-8/8%20passing-brightgreen)
 ![License](https://img.shields.io/badge/license-MIT-green)
 
 **A professional trading application with real HINDALCO data and moving average crossover strategy**
@@ -20,47 +20,14 @@ This project implements a complete trading strategy API with:
 - **FastAPI RESTful endpoints** with automatic documentation
 - **SQLite database** with Prisma schema
 - **Docker containerization**
-- **Comprehensive unit testing** (9/9 tests passing)
-
-## 🎯 Features Implemented
-
-### ✅ Core Requirements
-- **Database Setup**: SQLite with proper schema, 1215 HINDALCO records
-- **FastAPI Development**: GET/POST endpoints with validation
-- **Trading Strategy**: Moving Average Crossover with performance metrics
-- **Unit Testing**: 100% test coverage with pytest
-
-### ✅ Bonus Features
-- Real HINDALCO stock data (2014-2018)
-- Professional API documentation (Swagger UI)
-- Health check endpoint
-- Docker containerization
-- Comprehensive error handling
-- Input validation with Pydantic
-
-## 🏗️ Architecture
-trading-app/
-├── app/
-│ └── tests/ # Unit tests (9/9 passing)
-├── prisma/
-│ └── schema.prisma # Database schema
-├── scripts/
-│ ├── data_importer.py # HINDALCO data import
-│ └── simple_data_creator.py
-├── screenshots/ # Project documentation
-├── final_app.py # Main FastAPI application
-├── requirements.txt # Dependencies
-├── Dockerfile # Containerization
-└── docker-compose.yml # Multi-container setup
-
-text
+- **Comprehensive unit testing** (8/8 tests passing)
 
 ## 🚀 Quick Start
 
 ### Local Development
 ```bash
 # Clone repository
-git clone https://github.com/yourusername/trading-app.git
+git clone https://github.com/ashutoshpandey18/trading-app.git
 cd trading-app
 
 # Install dependencies
@@ -71,25 +38,27 @@ python final_app.py
 
 # Access the API at http://localhost:8000
 # View documentation at http://localhost:8000/docs
+
 Docker Deployment
-bash
+
 # Build and run with Docker
 docker build -t trading-app .
 docker run -p 8000:8000 trading-app
 
 # Or use Docker Compose
 docker-compose up
+
 📡 API Endpoints
-Endpoint	Method	Description	Parameters
-/	GET	API information & endpoints	-
-/data	GET	Get all 1215 HINDALCO records	-
-/data	POST	Add new stock data	JSON payload
-/strategy/performance	GET	Trading strategy results	short_window, long_window
-/strategy/signals	GET	Recent trading signals	short_window, long_window
-/health	GET	System health check	-
-/docs	GET	Interactive API documentation	-
+GET / - API information & endpoints
+GET /data - Get all 1215 HINDALCO records
+POST /data - Add new stock data with JSON payload
+GET /strategy/performance - Trading strategy results with short_window and long_window parameters
+GET /strategy/signals - Recent trading signals with short_window and long_window parameters
+GET /health - System health check
+GET /docs - Interactive API documentation
+
 📈 Trading Strategy
-Algorithm Details
+
 Moving Average Crossover Strategy:
 
 Short Window: 10-day moving average
@@ -100,7 +69,8 @@ Buy Signal: When short MA crosses above long MA
 
 Sell Signal: When short MA crosses below long MA
 
-Performance Metrics
+Performance Metrics:
+
 Total Trades: Number of executed trades
 
 Win Rate: Percentage of profitable trades
@@ -108,7 +78,6 @@ Win Rate: Percentage of profitable trades
 Total Return: Overall strategy performance
 
 Recent Signals: Last 10 trading signals with timestamps
-
 
 🧪 Testing
 
@@ -119,35 +88,34 @@ python -m pytest app/tests/ -v
 
 Test Coverage
 ✅ API endpoint validation
-
 ✅ Moving average calculations
-
 ✅ Strategy performance metrics
-
 ✅ Error handling scenarios
-
 ✅ Input validation tests
 
 📸 Screenshots
-
 <div align="center">
 API Documentation
-<img src="Screenshot 2025-10-21 041740.png" alt="API Documentation" width="800"/> <br/> <em>Interactive Swagger UI with automatic endpoint documentation</em>
+https://Screenshot%25202025-10-21%2520041740.png
+Interactive Swagger UI with automatic endpoint documentation
 
 HINDALCO Data (1215 Records)
-<img src="Screenshot 2025-10-21 041539.png" alt="Stock Data" width="800"/> <br/> <em>Real HINDALCO daily stock data from 2014-2018</em>
+https://Screenshot%25202025-10-21%2520041539.png
+*Real HINDALCO daily stock data from 2014-2018*
 
 Trading Strategy Performance
-<img src="Screenshot 2025-10-21 041553.png" alt="Strategy Performance" width="800"/> <br/> <em>Moving average crossover strategy results and analytics</em>
-
-
+https://Screenshot%25202025-10-21%2520041553.png
+Moving average crossover strategy results and analytics
 
 Docker Deployment
-<img src="Screenshot 2025-10-21 040655.png" alt="Docker" width="800"/> <br/> <em>Containerized application build and execution process</em>
+https://Screenshot%25202025-10-21%2520040655.png
+Containerized application build and execution process
 
 Test Results
-<img src="Screenshot 2025-10-21 050648.png" alt="Test Results" width="800"/> <br/> <em>Comprehensive test suite with 8/8 tests passing</em></div>
+https://Screenshot%25202025-10-21%2520050648.png
+*Comprehensive test suite with 8/8 tests passing*
 
+</div>
 🔧 Technical Stack
 Backend Framework: FastAPI
 
@@ -192,6 +160,8 @@ Sample Data Structure
 
 🐳 Docker Configuration
 
+Dockerfile
+
 FROM python:3.9-slim
 WORKDIR /app
 COPY requirements.txt .
@@ -210,9 +180,9 @@ services:
     environment:
       - DATABASE_URL=sqlite:///trading_final.db
 
-
-
 🔄 API Usage Examples
+
+Get All Stock Data
 
 curl -X GET "http://localhost:8000/data"
 
@@ -254,18 +224,9 @@ Run the application
 
 Access API documentation
 
-
 Environment Variables
 
 env :
+
 DATABASE_URL=sqlite:///trading_final.db
-API_HOST=0.0.0.0
-API_PORT=8000
 
-
-👨‍💻 Author
-Your Ashutosh Pandey
-
-GitHub: @ashutoshpandey18
-
-Email: ashutoshpandey23june2005@gmail.com
