@@ -1,0 +1,33 @@
+version: '3.8'
+
+services:
+  trading-app:
+    build: .
+    ports:
+      - "8000:8000"
+    environment:
+      - DATABASE_URL=file:./trading.db
+    volumes:
+      - ./app:/app/app
+      - ./prisma:/app/prisma
+      - ./scripts:/app/scripts
+    healthcheck:
+      test: ["CMD", "curl", "-f", "http://localhost:8000/health"]
+      interval: 30s
+      timeout: 10s
+      retries: 3
+
+  # Optional PostgreSQL service
+  # postgres:
+  #   image: postgres:13
+  #   environment:
+  #     - POSTGRES_USER=trader
+  #     - POSTGRES_PASSWORD=password
+  #     - POSTGRES_DB=trading
+  #   ports:
+  #     - "5432:5432"
+  #   volumes:
+  #     - postgres_data:/var/lib/postgresql/data
+
+# volumes:
+#   postgres_data:

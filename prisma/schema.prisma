@@ -1,0 +1,21 @@
+generator client {
+  provider = "prisma-client-js"
+  output   = "../app/prisma_client"
+}
+
+datasource db {
+  provider = "sqlite"
+  url      = "file:./dev.db"
+}
+
+model StockData {
+  id       Int      @id @default(autoincrement())
+  datetime DateTime @unique
+  open     Float
+  high     Float
+  low      Float
+  close    Float
+  volume   Int
+
+  @@map("stock_data")
+}
