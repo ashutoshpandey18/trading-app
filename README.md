@@ -230,13 +230,9 @@ env :
 
 DATABASE_URL=sqlite:///trading_final.db
 
-<<<<<<< HEAD
-=======
-
 👨‍💻 Author
 Your Ashutosh Pandey
 
 GitHub: @ashutoshpandey18
 
 Email: ashutoshpandey23june2005@gmail.com
->>>>>>> e869f3bdbe3a5c5a3d7900dece19b60ff2759def
